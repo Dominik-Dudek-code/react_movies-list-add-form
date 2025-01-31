@@ -26,7 +26,7 @@ export const NewMovie: React.FC<NewMovieProps> = ({ onAdd }) => {
   const isFormValid =
     title.trim() && imgUrl.trim() && imdbUrl.trim() && imdbId.trim();
 
-  const handleSubmit = (event: React.MouseEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!isFormValid) {
@@ -55,7 +55,7 @@ export const NewMovie: React.FC<NewMovieProps> = ({ onAdd }) => {
     <form
       className="NewMovie"
       key={count}
-      onClick={event => handleSubmit(event)}
+      onSubmit={event => handleSubmit(event)}
     >
       <h2 className="title">Add a movie</h2>
 
