@@ -15,7 +15,7 @@ type Movie = {
 export const App = () => {
   const [movies, setMovies] = useState<Movie[]>(moviesFromServer);
 
-  const onAdd = (movie: Movie) => {
+  const handleAdd = (movie: Movie) => {
     setMovies(prevMovies => [...prevMovies, movie]);
   };
 
@@ -25,7 +25,7 @@ export const App = () => {
         <MoviesList movies={movies} />
       </div>
       <div className="sidebar">
-        <NewMovie onAdd={movie => onAdd(movie)} />
+        <NewMovie onAdd={handleAdd} />
       </div>
     </div>
   );
